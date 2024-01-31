@@ -12,6 +12,7 @@ public class PlayerAction : MonoBehaviour
     private readonly Collider[] colliders = new Collider[3];
     [SerializeField] private int numFound;
 
+    private OreBase other;
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +21,10 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && numFound > 0)
         {
             //check if colliders is one of ore then mine 
-            Debug.Log(colliders[0].name);
+
+            colliders[0].TryGetComponent<OreBase>(out other);
+                        
+
         }
 
     }
