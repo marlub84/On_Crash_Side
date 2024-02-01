@@ -12,7 +12,7 @@ public class PlayerAction : MonoBehaviour
     private readonly Collider[] colliders = new Collider[3];
     [SerializeField] private int numFound;
 
-    private OreBase other;
+    private OreResources other;
     // Update is called once per frame
     void Update()
     {
@@ -22,8 +22,8 @@ public class PlayerAction : MonoBehaviour
         {
             //check if colliders is one of ore then mine 
 
-            colliders[0].TryGetComponent<OreBase>(out other);
-                        
+            colliders[0].TryGetComponent<OreResources>(out other);
+            other.Mining();
 
         }
 

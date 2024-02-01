@@ -8,7 +8,7 @@ using UnityEngine;
  */
 public abstract class Building : MonoBehaviour
 {
-    private float points;
+    private int points;
     private int type;
 
     public virtual string GetName()
@@ -23,4 +23,12 @@ public abstract class Building : MonoBehaviour
     }
 
   
+}
+
+public enum BuildType
+{
+    ePowerSolar,
+    PowerGenerator,
+    Oven,
+
 }
